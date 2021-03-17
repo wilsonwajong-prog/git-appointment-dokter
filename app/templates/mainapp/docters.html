@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Docters{% endblock %}
+{% block body %}
+    <section id="doctors" class="doctors">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Doctors</h2>
+          <p>Ini dokter, kami siap melayani anda</p>
+        </div>
+
+        <div class="row">
+          {% for dokter in dokters %}
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="data:;base64,{{ dokter.image }}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>{{dokter.name}}</h4>
+                <span>{{dokter.speciality}}</span>
+                <p>{{dokter.address}}</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Doctors Section -->
+{% endblock %}
